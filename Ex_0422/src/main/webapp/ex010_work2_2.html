@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style>
+			#container{border-left: 3px solid slateblue;
+						border-top: 1px solid lightgray;
+						width: 100px;
+						height: 250px;
+						padding: 10px;}
+		</style>
+		
+		
+		<script>
+				
+			window.onload = function(){	
+				let dan = document.getElementById("dan");
+				
+				for(let i = 1; i < 10; i++){
+					let option = document.createElement("option");
+					option.innerHTML = "" + i + "단";
+					option.value = i ;
+
+					dan.appendChild(option);					
+				}			
+			}
+			
+			function gugu(){
+				let res = "";
+				let dan = document.getElementById("dan").value;
+				
+				if(dan == ''){
+					alert("단을 선택하세요");
+					return;
+				}
+				let content = document.getElementById("content");
+				
+				for(let i = 1; i < 10; i++){
+					res += dan + " * " + i + " = " + (dan*i) + "<br>"
+				}
+				content.innerHTML = res;				
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+		
+		<div id="container">
+			
+			<select id="dan">
+				<option value="">::단::</option>
+			</select>
+			
+			<input type="button" value="확인" onclick="gugu();">
+				<div id="content"></div>
+			
+		</div>
+		
+	</body>
+</html>

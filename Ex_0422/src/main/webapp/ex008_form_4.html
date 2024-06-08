@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 실제로 가장 많이 쓰는 형태의 form 태그 전달 방법 -->
+		
+		<script>
+			function check(f){
+
+				let id = f.id; //name 속성 가져옴 각 name의 태그를 가져옴
+				let pwd = f.pwd;
+				
+				if(id.value == ''){
+					alert("아이디를 입력하세요");
+					id.focus(); // 특정 입력 상자로 커서를 옮기는 형태의 코드
+					return;
+				}
+
+				if(pwd.value == ''){
+					alert("비밀번호를 입력하세요");
+					pwd.focus(); // 특정 입력 상자로 커서를 옮기는 형태의 코드
+					return;
+				}
+				
+				f.method = "get"; // url에 파라미터 전송 
+				// get은 string 타입, post는 문자의 배열 타입으로 서버에 전달함
+				f.action = "signup.jsp";
+				f.submit();
+				
+				
+
+				f.submit();
+			}
+			
+			
+			
+		</script>
+		
+		
+	</head>
+	
+	<body>
+		<form name="ff">
+			아이디 : <input name="id"> <br>
+			비밀번호 : <input type="password" name="pwd"> <br>
+			<!--  this는 현재 전송버튼을 의미한다
+				this.form -> 해당 input을 소유하고 있는 form  
+				this.value -> 등으로 밖에 사용 못함. 자유자재가 아님
+				this.table, this.div는 존재하지 않는다.-->
+			<input type="button" value="전송" onclick="check(this.form)"> <br>
+			
+			
+			
+		</form>
+		
+	</body>
+</html>

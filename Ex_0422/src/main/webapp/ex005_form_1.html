@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>form 태그를 사용하여 서버로 값 전달하기 1</title>
+		
+		<script>
+			
+			function check(){
+				// forms : body 안에 있는 모든 form 태그들을 배열 구조로 가져오는 속성
+				let f = document.forms[0];
+				
+				// name이라는 속성은 form 태그만 가져올 수 있다.
+				// f 태그 중 name이 id, pwd, ta, select 로 입력되어 있는 요소의 value 값
+				
+				// 여기서 유효성 체크를 하고 넘김
+				let id = f.id.value;
+				let pwd = f.pwd.value;
+				let ta = f.ta.value;
+				let select = f.select.value;
+				let age = f.age.value;
+				
+				
+				
+				alert(id + "/" + pwd + "/" + ta + "/" + select);
+				
+				// form 태그의 정보를 가지고, 정환하고 싶은 페이지를 action으로 지정
+				f.action = "signup.jsp"; // 해당 f 태
+				
+				// form 태그의 정보들을 가지고, signup.jsp로 데이터를 전송 >> name 속성을 가지고 있는 애들만
+				f.submit();
+			}
+			
+		</script>
+		
+	</head>
+	
+	<body>
+		<!-- form1 -->	
+		<form>
+			<input name="age">
+			
+			<!-- a 태그는 form 태그의 공식적인 자식 요소가 아니므로, name 속성을 넣어도,
+			파라미터로 전달되지 않는다 -->
+			
+			<!-- form 태그의 자식 요소 :  input, textArea, select 등 -->
+			<a href="#" name="link_a">나는 링크</a>
+			
+			<table border="1">
+				<tr>
+					<th>아이디</th>
+					<td><input name="id" id="id"></td> <!-- name 속성과 id는 중복돼도 상관 X -->
+				</tr>
+
+				<tr>
+					<th>비밀번호</th>
+					<td><input type="password" name="pwd"></td> <!-- name 속성과 id는 중복돼도 상관 X -->
+				</tr>
+			
+				<tr>
+					<td colspan="2" align="center">
+						<input type="button" value="폼 체크" onclick="check();">
+					</td>
+				</tr>
+				
+			</table>
+
+				<!-- rows : 세로로 5칸만큼의 간격
+					cols : 가로로 50의 글자수 -->
+				<textarea name="ta" rows="5" cols="50"> 여기가 내용 넣는 부분 </textarea> <br>
+		
+				<select name="select">
+					<option value="menu1">메뉴1</option>
+					<option value="menu2">메뉴2</option>
+				</select>
+		
+		</form>
+		
+		
+		<!-- form2 -->	
+		<form>
+					
+		</form>
+		
+		
+	</body>
+</html>

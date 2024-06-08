@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<script>
+			
+			let cal_array = ["더하기(+)", "빼기(-)", "곱하기(*)", "나누기(/)"]
+			let re;
+			
+			window.onload = function(){
+
+			let su1 = document.createElement("input");
+			su1.id = "su1";
+			su1.style.width = "60px";
+			let su2 = document.createElement("input");
+			su2.id = "su2";
+			su2.style.width = "60px";
+
+			let btn = document.createElement("input");
+			btn.type = "button";
+			btn.value = "실행";
+			btn.onclick = calc;
+
+			let select = document.createElement("select");
+			select.id = "caOp";
+
+			let div = document.createElement("div");
+			div.id = "res";
+			
+			
+			document.body.appendChild(su1);			
+			document.body.appendChild(su2);			
+			document.body.appendChild(select);			
+			document.body.appendChild(btn);			
+			document.body.appendChild(div);			
+			
+				let caOp = document.getElementById("caOp");
+				for(let i = 0; i <cal_array.length; i++){
+					let option = document.createElement("option");
+					option.innerHTML = cal_array[i];
+					option.value = cal_array[i];
+					caOp.appendChild(option);
+				}
+			}
+			
+			function calc(){
+				let su1 = document.getElementById("su1").value.trim();
+				let su2 = document.getElementById("su2").value.trim();
+				
+				let pat = /^[0-9]*$/;
+				
+				if(!pat.test(su1) || !pat.test(su2) || su1 == '' || su2 == ''){
+					alert("정수만 입력해주세요.");
+					return;
+				}
+				
+				let c = document.getElementById("caOp");
+				let c_res = c.value;
+				
+				if(c_res == ''){
+					alert("연산 방법을 선택해주세요.");
+					return;
+				}
+				
+				let res = document.getElementById("res");
+				
+				switch(c_res){
+					case "더하기(+)":
+						re = Number(su1) + Number(su2);
+						break;
+					case "빼기(-)":
+						re = su1 - su2;
+						break;
+					case "곱하기(*)":
+						re = su1 * su2;
+						break;
+					case "나누기(/)":
+						if(su2 == 0){
+							re = 0;
+						}else{
+							re = su1 / su2;
+						}
+						break;
+				}
+				res.innerHTML = "결과 : " +re;
+			}
+			
+		</script>
+		
+		
+	</head>
+	
+	<body>
+		
+		
+	</body>
+</html>

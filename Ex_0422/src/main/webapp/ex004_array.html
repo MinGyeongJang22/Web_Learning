@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	
+		<script>
+			let sido_array = ["서울", "대전", "대구", "부산"];
+		
+			window.onload = function(){
+				
+				let sido = document.getElementById("sido");
+				
+				for(let i = 0; i < sido_array.length; i++){
+					let newOp = document.createElement("option");
+					newOp.innerHTML = sido_array[i];
+					sido.appendChild(newOp);
+				}				
+				
+			}
+		
+		
+		</script>
+	
+	</head>
+	
+	<body>
+		지역 : 
+		<select id="sido">
+			<option value="">:::지역을 선택하세요 ▼:::</option>
+		</select>
+	</body>
+</html>

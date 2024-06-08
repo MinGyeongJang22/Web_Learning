@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<script>
+			// 1에서 100 사이의 난수
+			let rnd = Math.floor(Math.random() * 100) + 1;
+			
+				let loginfo = ""; 
+			function check(){
+				let inp = document.getElementById("inp").value;
+				let log = document.getElementById("log");
+				let res = document.getElementById("res");
+				
+				let pat = /^[0-9]*$/;
+				if(!pat.test(inp) || inp.trim() == ''){
+					alert("정수만 입력하세요");
+					return;
+				}	
+				
+//				let loginfo = loginfo + inp; 
+				loginfo += inp + " "; 
+				log.innerHTML = loginfo;
+				
+				if(Number(inp) < rnd){
+					res.innerHTML = "작음"
+				}else if(Number(inp) > rnd){
+					res.innerHTML = "큼"
+				}else{
+					res.innerHTML = "정답"
+				}
+			}
+			
+		</script>
+		
+			<style>
+				#log{
+					width: 100px;
+					border: 2px solid seagreen;
+				}
+				#res{width: 100px;
+					border: 2px solid salmon;
+					color: red;}
+			</style>
+		
+	</head>
+	
+	<body>
+		
+			<h5>1 ~ 100 사이의 숫자 중 하나를 입력해서 정답을 맞혀보세요</h5>
+			<input id="inp">
+			<input type="button" value="확인" onclick="check();">
+			
+			<div id="log"></div>
+			<div id="res"></div>
+	</body>
+</html>

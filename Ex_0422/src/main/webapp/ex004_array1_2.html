@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	
+		<style>
+			.opt{color: blue;}
+		</style>
+	
+		<script>
+			let sido_array = ["서울", "대전", "대구", "부산"];
+		
+			window.onload = function(){
+				// 현재 페이지가 로드 완료되면 호출되는 메서드의 영역이다
+				
+				let sido = document.getElementById("sido");
+				
+				//for문을 반복하면서 옵션 태그 생성 및 for문을 만듬
+				for(let i = 0; i < sido_array.length; i++){
+					let option = document.createElement("option");
+					option.innerHTML = sido_array[i];
+					option.value = sido_array[i];
+					option.className = "opt";
+					
+					sido.appendChild(option);
+				}				
+			}
+			
+			function check(){
+				let sido = document.getElementById("sido");
+				let sido_res = sido.value;
+				
+				if(sido_res == ''){
+					alert("지역을 선택하세요");
+				}else{
+					alert(sido_res + "을(를) 선택하셨습니다.");
+				}
+				
+			}		
+		
+		</script>
+	
+	</head>
+	
+	<body>
+		지역 : 
+		<select id="sido">
+			<option value="">:::지역을 선택하세요 ▼:::</option>
+		</select>
+		
+		<input type="button" value="확인" onclick="check();">
+		
+	</body>
+</html>
