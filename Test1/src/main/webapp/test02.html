@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<link rel="stylesheet" href="css/reset.css">
+		
+		<style>
+			#box{ margin: 30px auto;
+				width: 500px;
+				height: 300px;
+				background-color: lightblue;
+				border: 2px solid skyblue;}
+			#container{margin: 10px 100px;
+						width: 250px;
+						height: 250px;
+						border: 1px solid gray;
+						padding: 10px;
+						background-color: lightgrey;
+						}
+			#container form{padding: 10px 0;
+							overflow: hidden;
+							}
+			
+			#container input{width: 120px;
+							float: right;
+							margin-right: 10px;
+							font-size: 7px;
+							}
+			#container .a1{width: 155px;
+								height: 20px;}
+								
+			#container .a2{width: 120px;
+								height: 20px;}
+							
+			#container .email{ float: right;
+								width: 190px;
+								height: 26px;
+								overflow: hidden;}
+			#container .email .a{float: left;}
+			#container .email .a span{width: 20px;
+			margin: 0 10px;}
+			#container .email input{width: 80px;
+			height: 22px;
+			margin-right: -10px;}
+			
+			input{border: none;
+					background: none;
+					border-bottom: 1px dashed black;}
+			.button{margin: 0 auto;
+					width: 150px;
+					height: 30px;
+					margin-top: 10px;
+					background-color: lightgreen;
+					font-weight: bold;
+					font-size: 20px;
+					border: 1px solid darkgray;
+					cursor: pointer;
+					}
+			
+			
+		</style>
+	
+	</head>
+	
+	<body>
+		<div id="box">
+			<div id="container">
+				<form action="insert.no">
+					<b>아이디</b> : <input type="text" size="10" placeholder="아이디를 입력하시오" name="myId" class="a1"> <br> <br>
+					<b>패스워드</b> : <input type="password" placeholder="영문자/대 소문자 특수문자, 숫자 포함 8 ~ 32자" name="Pwd" class="a1"><br> <br>
+					<b>패스워드 확인</b> : <input type="password" placeholder="비밀번호와 동일하게 입력하시오" name="PwdCheck" class="a2"><br> <br>
+					<b>이메일</b> : 
+					<div class="email">
+						<div class="a">
+						<input type="text" size="12" placeholder="emailName" name="emailName">
+						</div>
+							<div class="a">
+							<span>@</span>
+							</div>
+						<div class="a">
+						<input type="text" size="12" placeholder="example.com" name="domain">
+						</div>
+					</div>
+					<br> <br>
+					<b>주소</b> : <input type="text" name="address" class="a1">
+					
+					<input type="button" value="가입" class="button">
+					
+				</form>				
+				
+				
+			</div>
+			
+		</div>	
+	
+	</body>
+</html>
