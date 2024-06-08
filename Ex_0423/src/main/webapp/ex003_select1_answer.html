@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<script>
+			
+				
+		/* 
+		 윤년 구하기
+		 1) 연도가 4로 나워떨어져야 함
+		 2) 연도가 100으로 나워떨어지면 평년
+		 	-> 4로 나눠떨어지더라도 100으로 나눠떨어지면 평년
+		 3) 100으로 나워떨어지더라도 400으로 나눠떨어지는 해는 윤년
+		 */
+			
+//			birth_day.remove(0); /옵션 0번만 지움
+			
+			window.onload = function(){
+				let birth_year = document.getElementById("birth_year");
+				
+				for(let i = 2024; i >= 1970; i--){
+					let opt = document.createElement("option");
+					opt.innerHTML = i + "년";
+					opt.value = i;
+					birth_year.appendChild(opt);
+				}
+				
+			}
+			
+			function check_yoon(year){
+				let birth_month = document.getElementById("birth_month");
+				let birth_day = document.getElementById("birth_day");
+				for(let i = 0; i < 12; i++){
+					birth_month.remove(1);
+				}
+				
+				let res = document.getElementById("result");
+				if( birth_month.value == '' || year == '' || birth_day.value == ''){
+					res.innerHTML = "정확한 날짜를 입력하세요.";
+					res.style.color = "red";
+				}	
+				
+				for(let i = 12; i >= 1; i--){
+					let opt = document.createElement("option");
+					opt.innerHTML = i + "월";
+					opt.value = i;
+					birth_month.appendChild(opt);
+				}
+			}
+			
+			
+			let day;
+			
+			function monthChange(month){
+				let year = document.getElementById("birth_year").value;
+				let birth_day = document.getElementById("birth_day");
+				
+				for(let i = 0; i < day; i++){
+					birth_day.remove(1);
+				}
+
+				let res = document.getElementById("result");
+				if( month == '' || year == '' || birth_day.value == ''){
+					res.innerHTML = "정확한 날짜를 입력하세요.";
+					res.style.color = "red";
+				}	
+
+				switch(month){
+					case "2":
+						if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ){
+							day = 29;
+						}else{
+							day = 28;
+						}
+						break;
+					case "4":
+					case "6":
+					case "9":
+					case "11":
+						day = 30;
+						break;
+					case "1":
+					case "3":
+					case "5":
+					case "7":
+					case "8":
+					case "10":
+					case "12":
+						day = 31;
+						break;
+				}//switch
+				
+				for(let i = 1; i <= day; i++){
+					let opt = document.createElement("option");
+					opt.innerHTML = i + "일";
+					opt.value = i;
+					birth_day.appendChild(opt);
+				}//for
+			}
+			
+			
+			function dayChange(day_res){
+				let res = document.getElementById("result");
+				let year = document.getElementById("birth_year").value;
+				let month = document.getElementById("birth_month").value;
+
+				if( month == '' || year == '' || day_res == ''){
+					res.innerHTML = "정확한 날짜를 입력하세요.";
+					res.style.color = "red";
+				}	
+
+				
+				res.innerHTML = "내 생일은 " + year + "년 " + month + "월 " 
+				+ day_res + "일 입니다.";
+				
+				res.style.color = "#00caf2";
+			}
+			
+		</script>
+		
+		
+	</head>
+	
+	<body>
+		생년월일
+		<select id="birth_year" onchange="check_yoon(this.value);">
+			<option value="">년</option>
+		</select>
+
+		<select id="birth_month" onchange="monthChange(this.value);">
+			<option value="">월</option>
+		</select>
+
+		<select id="birth_day" onchange="dayChange(this.value);">
+			<option value="">일</option>
+		</select>
+		
+		<div id="result"></div>
+	</body>
+</html>

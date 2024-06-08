@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<!-- 이미 jquery를 로드하고 있는 스크립트 영역은 아무것도 사용할 수 없다.
+		script를 사용하기 위해서는 새로 만들어야 한다 -->
+		
+		<!-- jquery : 자바 스크립트를 좀 더 사용하기 용이하도록 설계해둔 일종의 라이브 개념 -->
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	
+		<script>
+			
+			// 1) 초기화 영역 세팅 방법 1
+			$(document).ready( function(){ // jquery에서 window.onload와 같다
+				alert("최초 실행되는 영역");
+				
+				// document.body >> 특정 요소를 바로 검색함
+				$("body").css("background", "red");
+				
+			} );
+			
+			// 2) 초기화 영역 세팅 방법 2
+			$( function(){
+				
+			} );
+			
+			
+		</script>
+		
+	</head>
+	
+	<body>
+	
+	</body>
+</html>
