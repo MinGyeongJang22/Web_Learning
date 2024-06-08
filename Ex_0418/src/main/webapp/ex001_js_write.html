@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스트립트의 출력구조</title>
+		
+		<script> 
+			
+			// 보통 script를 head 안에 넣고 작업하기 때문에 그럴 경우 script가 먼저 출력된다. 
+			// 단, script 영역이 body에 있을 경우 위에 써져있는 문장들이 출력되고 script에 있는 내용들이 출력된다.
+			
+			/**/
+			//자바스크립트를 사용하기 위한 영역
+			
+			// document(Document Object Model : DOM 객체) -> body >> body로 보내는 작업
+			//println같은거지만 body에 보내느거기 때문에 줄바꿈이 필요할 경우 <br> 사용
+			// 자바 스트립트는 "", '' 의 구별이 따로 없다. +기를 사용해 문장끼리 이어줄 수 있다.
+			// 자바와 동일하게 문자열 앞은 연산, 뒤는 이어붙이기 사용
+			// 자바와 동일하게 문자열 앞은 연산, 뒤는 이어붙이기 사용
+			// 자바와 다르게 ,로 이어붙이기 가능하다
+			// "", '' 같이 쓰기 가능하다
+			
+			document.write("hello javaScript<br>"); // hello javaScript
+			document.write('hello javaScript' + '<br>'); // hello javaScript
+			document.write(1 + 1 + "hello" + 1 + 1 + "<br>"); // 2hello11
+			document.write('안녕', 100, '<br>'); // 안녕100
+			document.write("안녕", 100, '<br>'); // 안녕100
+			document.write("안녕", 100+1, '<br>'); // 안녕101
+			document.write('hello', "world" + "java" , '<br>'); // helloworldjava
+			document.write( 1 , 1 + '<br>'); // 11
+			document.write( 1 + 1 ,2 + '<br>'); // 22
+			document.write( 1 , 1+1 + '<br>'); // 12
+			
+			//쌍따옴표와 홑따옴표의 구별이 없어 출력할 따옴표와 반대되는 따옴표를 문장을 감싸야 한다
+			//'자바'의 정석
+			document.write("'자바'의 정석<br>")
+			//"자바"의 정석
+			document.write('"자바"의 정석<br>')
+			//"자바"의 '정석''
+			document.write('"자바"의', "'정석'<br>")
+			
+		</script>
+		
+	</head>
+	
+	<body>
+		나는 body입니다.
+	</body>
+	
+</html>

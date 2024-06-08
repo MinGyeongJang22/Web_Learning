@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<script>
+
+			for(let i = 6; i >= 1; i--){
+				document.write("<h" + i + ">" + i + " 자바 스크립트 </h" +i + ">")
+			}
+			
+			document.write("<hr>")
+			
+			document.write("<ul>")
+			for(let i = 0; i <= 4; i++){
+				document.write("<li>" + "메뉴" + i + "</li>");
+			}
+			document.write("</ul>");
+			
+		//  가능은 하지만 배열이 필요할듯 > 색이 다양하지 않음	
+			document.write("<style>")
+				let las_n = 2
+			for(let i = 1; i <= 6; i++){
+				let co = "h" + i + "{ color: #ff" + las_n + ";}"
+				document.write(co);
+				las_n++;
+			}
+			document.write("</style>");
+			
+			
+		</script>
+
+			
+		
+	</head>
+	
+	<body>
+	
+	</body>
+</html>

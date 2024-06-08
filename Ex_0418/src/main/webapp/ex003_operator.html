@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>연산자</title>
+		
+		<script>
+			let a = 10;
+			let b = 3;
+			
+			let result;
+			
+			result = a + b;
+			document.write(result, '<br>'); // 13
+			
+			// result가 자동으로 실수를 담는 자료형으로 변한다
+			result = a / 3;
+			document.write(result, '<br>'); // 3.3333333333333335
+			
+			//  .toFixed(마지막으로 보여줄 소수점 위치) : 소수점 짤라서 보여주는 함수
+			result = a / 3;
+			document.write(result.toFixed(2) + '<br>'); // 3.33
+			
+			result = a / 3;
+			document.write(result.toFixed(0) + '<br>'); // 3
+			
+			result = a % b;
+			document.write(result + '<br>'); // 나머지 1 출력
+			
+			document.write("<hr>");
+			
+			// result가 자동으로 참 거짓을 판별하는 자료형으로 변한다
+			result = a > b;
+			document.write(result, '<br>'); // true
+			
+			result = a == b;
+			document.write(result + '<br>'); // false
+			
+			result = a != b;
+			document.write(result + '<br>'); // true
+			
+			document.write("<hr>");
+			
+			a += b;
+			document.write(a + "<br>");	
+					
+			a = 10;
+			a /= b;
+			document.write(a + "<br>");	
+			
+			document.write("<hr>");
+			
+			//과수원이 있다.
+			//과수원에서 하루에 생산되는 과일의 갯수는 
+			//사과 5개, 오렌지 10태, 배 3개이다.
+			//과수원에서 하루에 생산되는 과일의 총 갯수를 출력하고
+			//시간당 전체 과일의 평균 생산갯수를(소수점 두자리까지) 출력
+			//---------
+			//하루 생산량 : 18개
+			//시간당 생산량 : 0.75개
+			
+			let apple = 5;
+			let orange = 10;
+			let pear = 3;
+			
+			let res = apple + orange + pear;
+			
+			document.write("하루 생산량 : ", res, "개 <br>");
+			res /= 24;
+			document.write("시간당 생산량 : ", res.toFixed(2), "개 <br>");
+			
+			
+			
+			
+			
+			
+		</script>
+		
+	</head>
+	
+	<body>
+	
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<script>
+			/* 국어, 영어, 수학 성적을 prompt로 입력받는다
+				세 과목의 총점과 평균을 출력 */
+		
+		// Number : 정수형태의 문자열을 정수로 받기
+		let kor = Number(prompt("국어 : "));
+		let eng = Number(prompt("영어 : "));
+		let math = Number(prompt("수학 : "));
+
+		let total = kor + eng + math;
+		let avg = total / 3;
+
+		document.write( "총점 : ", total +"점 <br>");
+		document.write( "평균 : ", avg.toFixed(1) +"점 <br>");
+
+		document.write( "<hr>");
+		
+		
+		
+
+		</script>
+		
+		
+	</head>
+	
+	<body>
+	
+	</body>
+</html>
