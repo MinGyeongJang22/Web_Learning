@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		
+		<style>
+			hr{width: 300px;
+			   margin: 10px 0;
+				}
+				
+			#disp{width: 280px;
+				  height: 280px;
+				  padding: 10px;
+				  background-color: black;
+				  color: white;}
+		</style>
+		
+			<script>
+			// 구구단 출력 메서드
+			function calc(){
+				let dan = document.getElementById("dan").value; 
+				
+				
+				//정규식
+				// 특정한 규칙을 가진 문자열의 집합
+				
+				// 1) 정수를 판단하는 정규식
+				let regex = /^[0-9]*$/; // 0~9 사이의 값들만 집어넣는다. 10 등은 1, 0 이니 가능
+				
+				if(!regex.test(dan) || dan.trim() == ''){ // dan의 값이 test를 거쳤을 때, 정수만 가지고 있을 경우 '참', 아닐경우 '거짓'
+					alert('정수만 값을 입력하세요.');
+					return;
+				}
+					// document.write() 를 제외하고는 ,로 이어붙일 수 없다
+					let str = "";
+					for(let i = 1; i <= 9; i++){
+						str = str + dan + " * " + i + " = " + (dan * i) + "<br>";
+					}
+					let disp = document.getElementById("disp"); 
+					disp.innerHTML = str;
+				}
+			
+			let b_show = true;
+
+			// 보여주고 숨기는 메서드
+			// 플래그 : 하나의 버튼이 두개 이상의 역할을 하는것
+			function show(){
+				b_show = !b_show; // true를 false로
+
+				let btn_show = document.getElementById("bt_show");
+				btn_show.value = b_show ? "숨기기" : "보이기"; // btn_show는 b_show의 값이 참일 경우 "숨기기", 거짓일 경우 "보이기".
+
+				let disp = document.getElementById("disp").style.display
+				= b_show ? "block" : "none";
+			}
+			
+		</script>
+
+		
+	</head>
+	
+	
+	<body>
+		
+		단 : <input id="dan">
+		<input type="button" value="계산하기" onclick="calc();">
+		<input type="button" value="숨기기" id="bt_show" onclick="show();"><br>
+
+		<hr>
+				
+		<div id="disp"></div>
+	
+	</body>
+</html>

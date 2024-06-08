@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<script>
+			
+			function check(){
+				
+				let name = document.getElementById("name").value.trim();
+				let age = document.getElementById("age").value.trim();
+
+				if(name == '' || age == ''){
+					alert("유효한 정보를 입력하세요");
+					return;
+				}
+				
+				alert("이름 : " + name + "\n나이 : " + age); // alert는 , 로 이어붙일 수 없다. + 만 가능
+				
+				
+				
+				
+			}
+			
+			
+			
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		<input id="name" placeholder="이름"> <br>
+		<input id="age" placeholder="나이"> <br>
+		<input id="btn" type="button" value="제출" onclick="check();">
+		
+		
+		
+	</body>
+</html>

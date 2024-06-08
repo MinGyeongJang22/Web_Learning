@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+				<script>
+			
+			
+			// 구구단 출력 메서드
+			function cnt(){
+				let dan = document.getElementById("dan").value.trim(); 
+				
+				let i = 0;
+				if(dan == '' || dan % 1 != 0){
+					alert('유효한 값을 입력하세요.');
+					return;
+				}
+
+					let res = "";
+					for(i = 1; i <= 9; i++){
+						res += dan + " * " + i + " = " + dan*i + "<br>";
+					}
+					
+					let div = document.getElementById("div"); 
+					div.innerHTML = res;
+			
+					div.style.background = "black";
+					div.style.color = "white";
+					div.style.width = "300px";
+				
+				}
+			
+			// 보여주고 숨기는 메서드
+			function cover(){
+				// 터튼의 이름이 나타내기일 경우
+				let div = document.getElementById("div"); 
+				let btn2 = document.getElementById("btn2");
+
+				if(btn2.value == "나타내기" ){
+					div.style.display = "block";
+					btn2.value = "숨기기"; 
+				}else{
+					div.style.display = "none";
+					btn2.value = "나타내기"; 
+				}
+			}
+			
+		</script>
+
+
+		
+	</head>
+	
+	
+	<body>
+		
+		단 :
+		<input id="dan" placeholder="단 입a력">
+		<input id="btn" type="button" value="계산하기" onclick="cnt();">
+		<input id="btn2" type="button" value="숨기기" onclick="cover();"><br>
+
+		<hr>
+				
+		<div id="div"></div>
+	
+	</body>
+</html>

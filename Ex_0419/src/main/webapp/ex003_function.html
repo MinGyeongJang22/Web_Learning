@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바 스크립트의 함수</title>
+	
+		<script>
+			// 자바스크립트의 함수(메서드)
+			function greet(){
+				alert("버튼1 누름");
+			
+			//	function ex(){				} 함수 안에 함수 불가능
+			
+			}
+
+			// 함수 바깥에서 요소를 검색하는 것은 거의 불가능
+			// let a = document.getElementById("myInput"); 
+			
+			function greet2( s ){
+				// alert(s);
+				
+				//body에 존재하는 특정 요소를 검색
+				let a = document.getElementById("myInput"); // 해당 id를 가지고 있는 태그를 a에 담기 가능 (let는 태그도 가능)
+				a.value = s; // myInput 태그 안에 있는 값의 value를 변경
+				
+				// let btn = document.getElementById("btn2"); >> 태그 객체 가져옴
+				// alert(btn.value);
+				
+				let btn = document.getElementById("btn2").value; // >> string 값 가져옴
+				alert(btn);
+			}
+			
+			function m_set(){
+				let myP = document.getElementById("myP");
+				myP.style.color = "red";
+			}			
+			
+			function send(){
+				let txt = document.getElementById("txt").value;
+				let res = document.getElementById("res");
+				
+				if(txt.trim() == ''){
+					alert("값을 입력하세요"); // 무결성(유효성) 체크
+					return; // 코드를 여기서 중단
+				}
+				res.value = txt;
+				
+				let div = document.getElementById("div");
+				//div.innerHTML= txt; // div 태그 사이에 텍스트를 삽입
+				div.textContent= txt; // innerHTML 과 동일하나 줄바꿈 등등을 하지 못함
+				
+			}
+			
+			
+		</script>
+	
+	
+	</head>
+	
+	<body>
+
+		<input id="btn1" type="button" value="버튼1" onclick="greet();"> <!-- greet() or greet(); -->
+		<input id="btn2" type="button" value="버튼2" onclick="greet2('하이');"> 
+		<input id="myInput" size="5" value="기본값">  <!-- 타입을 명시하지 않으면 기본값인 text가 설정된다 --> 
+		
+		<p id="myP">안녕하세요</p>
+		<input type="button" value="버튼3" onclick="m_set();">
+		
+		<hr>
+		
+		<input id="txt" size="5" placeholder="input data">
+		<input type="button" value="확인" onclick="send();"> <br>
+		<input id="res" value="">
+		
+		<div id="div"></div>
+		
+	</body>
+</html>

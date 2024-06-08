@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<script>
+		// 함수 1개만으로도 가능
+			
+		function cal(s){
+				// 무조건 수1 + 수2
+				let num1 = Number(document.getElementById("num1").value.trim()); // 해당 id를 가지고 있는 태그를 a에 담기 가능 (let는 태그도 가능)
+				let num2 = Number(document.getElementById("num2").value.trim()); // 해당 id를 가지고 있는 태그를 a에 담기 가능 (let는 태그도 가능)
+				let res = document.getElementById("res"); // 해당 id를 가지고 있는 태그를 a에 담기 가능 (let는 태그도 가능)
+				let log_res = document.getElementById("log_res"); // 해당 id를 가지고 있는 태그를 a에 담기 가능 (let는 태그도 가능)
+				
+				let total = "";
+					switch(s){
+					case '+':
+						res.value = num1 + num2;
+						log_res.value += "" + num1 + " + " + num2 + " = " + res.value + "\n";
+						break;
+					case '-':
+						res.value = num1 - num2;
+						log_res.value += "" + num1 + " - " + num2 + " = " + res.value + "\n";
+						break;		
+					case '*':
+						res.value = num1 * num2;
+						log_res.value += "" + num1 + " * " + num2 + " = " + res.value + "\n";
+						break;		
+					case '/':
+						res.value = (num1 / num2).toFixed(2);
+						log_res.value += "" + num1 + " / " + num2 + " = " + res.value + "\n";
+						break;		
+					}				
+			}
+			
+		function remove(){
+			let log_res = document.getElementById("log_res"); // 해당 id를 가지고 있는 태그를 a에 담기 가능 (let는 태그도 가능)
+			log_res.value = "";
+		}
+		
+		</script>
+		
+		<style>
+			input{border: none;}
+			table{border-collapse: collapse;
+				border: 2px solid gray;}
+			#log{overflow: hidden;
+				width: 200px;
+				border: 2px solid darkgray;
+				margin: 10px 0;}	
+			#log input{ float: right;
+						margin: 5px;
+						cursor: pointer;
+						}
+			#log #log_res{
+				border: 3px dotted gray;
+				width: 100px;
+				height: 180px;
+				margin: 5px;
+				
+			}
+				
+		</style>
+		
+		
+	</head>
+	
+	<body>
+		
+		<table border="1">
+			<tr>
+				<td>수1</td>
+				<td>
+					<input id="num1" size="5">  <!-- 타입을 명시하지 않으면 기본값인 text가 설정된다 --> 
+				</td>
+			</tr>
+			
+			<tr>
+				<td>수2</td>
+				<td>
+					<input id="num2" size="5">  <!-- 타입을 명시하지 않으면 기본값인 text가 설정된다 --> 
+				</td>
+			</tr>
+		</table>
+		
+		<div>
+		<input id="cal1" type="button" value="+" onclick="cal('+');"> <!-- + -->
+		<input id="cal2" type="button" value="-" onclick="cal('-');"> 
+		<input id="cal3" type="button" value="*" onclick="cal('*');"> 
+		<input id="cal4" type="button" value="/" onclick="cal('/');"> 
+		</div>
+		
+		<table border="1">
+			<tr>
+				<td>결과 :</td>
+				<td>
+					<input id="res" size="5">  <!-- 타입을 명시하지 않으면 기본값인 text가 설정된다 --> 
+				</td>
+			</tr>
+		</table>
+	
+		<div id="log">
+			<input id="log_remove" type="button" value="로그삭제" onclick="remove();"> 
+			<textarea id="log_res" > </textarea> 
+			
+			
+		</div>
+	</body>
+</html>

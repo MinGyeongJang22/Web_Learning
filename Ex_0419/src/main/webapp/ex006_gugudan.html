@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<script>
+			function cnt(){
+				let dan = Number(document.getElementById("dan").value); 
+				
+				document.write("단 : ");
+				document.write('<input id="dan" placeholder="'+ dan+'">');
+				document.write('<input id="btn" type="button" value="계산하기" onclick="cnt();">');
+				
+				document.write("<hr>");
+
+				document.write('<div id="div">');
+				for(let i = 1; i <= 9; i++){
+					document.write(dan + " * " + i + " = " + dan*i +"<br>");
+				}
+				document.write("</div>");
+				
+				let div = document.getElementById("div"); 
+				div.style.background = "black";
+				div.style.color = "white";
+				div.style.width = "300px";
+				
+			}
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		단 :
+		<input id="dan" placeholder="단 입력">
+		<input id="btn" type="button" value="계산하기" onclick="cnt();">
+		
+
+	
+	</body>
+</html>
