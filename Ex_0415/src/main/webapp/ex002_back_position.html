@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배경 이미지의 위치 선정</title>
+		
+		<style>
+			
+			p{padding: 50px; width: 400px; height: 150px;}
+			
+			.back1{background: yellow url(image/background.jpg) no-repeat right bottom; } /* 색과 이미지 같이 사용하고 싶은 경우 url()이 뒤에 */
+			
+			.back2{background: yellow url(image/background.jpg) no-repeat 20px 100px; } /* 색과 이미지 같이 사용하고 싶은 경우 url()이 뒤에 */
+			
+			.back3{background: yellow url(image/background.jpg) no-repeat center; } /* 색과 이미지 같이 사용하고 싶은 경우 url()이 뒤에 */
+
+			.back4{background: yellow url(image/background.jpg) no-repeat 100% 100%; } /* 색과 이미지 같이 사용하고 싶은 경우 url()이 뒤에 */
+
+		</style>
+		
+	</head>
+	
+	<body>
+		<p class="back1">
+			안녕하세요
+		</p>
+		
+		<p class="back2">
+			안녕하세요
+		</p>
+		
+		<p class="back3">
+			안녕하세요
+		</p>
+		
+		<p class="back4">
+			안녕하세요
+		</p>
+	</body>
+</html>

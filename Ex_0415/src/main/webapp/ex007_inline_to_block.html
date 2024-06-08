@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>인라인 요소 -> 블록요소</title>
+		
+		<style>
+			li{list-style: none;}
+			
+			/*  display : inline  >>  블록 요소 -> 인라인 요소
+				display : block >> 인라인 요소 -> 블록 요소
+			*/
+			
+			img{display: block;} 
+			span{display: block;} 
+			a{display: block;
+			  border: 1px solid black;
+			  padding: 10px 0;} 
+			  
+			 /* text-decoration: underline;  >> 디폴트, 밑줄  
+			 	text-decoration: overline; >> 윗줄
+			 	text-decoration: line-through; >> 상쇄선
+			 	text-decoration: none; >> 없음
+			 */ 
+			a{text-decoration: none;}  
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		<ul>
+			<li>
+				<img src="image/acid2Test.jpg" alt="웃는 얼굴 이미지" title="스마일">
+				<span>웃는 이미지</span>
+				<span>어때?</span>
+				<a href="#">이거 눌러도 쥐뿔도 없음</a>
+			</li>
+			
+		</ul>
+		
+	</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style>
+			/* ex) 01, 2, 3 
+			'.'은 참조 클래스명 호출용 */
+			.r{color: red;}
+			p.g{color: green;}
+			p.b{color: blue;}
+			
+			span{color: palevioletred;}
+			
+			/* 공백은 '특정 태그의 자식 태그를 찾으시오'의 의미 */
+			div.div01 h3{color: darkseagreen;} 
+			/* -> div01 클래스명이 붙은 div 내부의 h3 태그 구간을 이 색으로 칠해라 */
+			div.div01 h3 span.block{color: darkmagenta;}
+			/* -> div01 클래스명이 붙은 div 내부에 있는 h3 태그 안에서, 
+			block 클래스명이 붙어있는 span 태그 구간을 이 색으로 칠해라 */
+			
+			/*====================================================*/
+			
+			/* ex) 04 
+			'#'은 id 접근용 */
+			#id1{color: aqua;}
+			h1#id2{color: plum;}
+			
+			/*==================================================*/
+			
+			/* ex) 05 
+			border : 테두리 스타일 조정
+			div : 범위 조정
+			*/
+			
+			p{border-width: 5px; /*테두리 두께*/
+			border-color: hotpink;} /*테두리 색상*/
+			
+			.p1{border-style: none;} /*테두리 없음*/
+			.p2{border-style: hidden;} /*테두리 숨겨져 있음*/
+			.p3{border-style: dotted;} /*둥근 점선*/
+			.p4{border-style: dashed;} /*네모난 점선*/
+			.p5{border-style: solid;} /*실선*/
+			.p6{border-style: double;} /*두겹짜리 선*/
+			.p7{border-style: groove;} /*두께(+ 그림자) 있음*/
+			.p8{border-style: ridge;} /*두께(+ 다른 그림자) 있음*/
+			.p9{border-style: inset;} /*두께 덜 있음*/
+			.p10{border-style: outset;} /*두께 덜 있음2*/
+			
+			/* border를 사용해, width, color, style를 단축해서 사용 가능 
+			di3 처럼 너비가 따로 지정된 경우, 더 이상 블록 요소는 브라우저의 너비에 맞추지 않고
+			스크롤이 생긴다.*/
+			
+			.di1{border: 5px solid #ff0;} /*색은 표기하지 않을 경우 검정색으로*/
+			.di2{border-bottom: 7px double orangered;
+				border-top: 5px solid darkorange;
+				border-left: 4px dashed orange;
+				border-right: 6px dotted coral;}
+			.di3{border: 5px solid;
+				width: 300px;
+				height: 150px;}
+			
+			/*==========================================================*/
+			
+			/* ex 06)
+			padding : 안쪽 여백
+			 */
+			.box1{border: 5px solid red;
+				background: yellow;
+				padding: 5px;} /*상하좌우*/
+				
+			.box2{border: 5px solid red;
+				background: yellow;
+				padding: 5px 10px;} /*상하, 좌우*/ 
+				
+			.box3{border: 5px solid red;
+				background: yellow;
+				padding: 2px 10px 6px;} /*상, 좌우, 하*/
+			
+			.box4{border: 5px solid red;
+				background: yellow;
+				padding: 0 10px 4px 6px;} /*상, 우, 하, 좌*/
+			
+			.box5{border: 5px solid red;
+				background: yellow;
+				padding-left: 5px;
+				  padding-top: 10px;} /*특정 부분만*/
+			
+			/*=============================================================*/
+			
+			/* ex 07)
+			margin : 바깥쪽 여백
+			 */
+			
+		</style>
+		
+		
+	</head>
+	
+	<body>
+		
+		
+		<!--ex) 01, 02, 03   ---------------------------------------------------
+		class : 디자인만을 위한 식별자
+		class는 중복가능하다.
+		<style>에서 클래스 접근은 '.'으로 한다
+			
+		div : 블록 요소, 여러개를 한번에 묶어서 사용	
+		-->
+		Css(cascade style sheet) : 웹페이지의 디자인 적용을 위한 문법 <br>
+		<!-- html에서는 색상과 관련된 작업을 수행할 때, 16진수 RGB를 이용할 수 있음 -->
+		16진수 RGB 색상을 찾아내는 사이트 두 곳 <br>
+		<a href="https://www.naver.com" target="_blank">Naver</a> -> 색상 팔레트 <br> 
+		<a href="https://www.colorpicker.com" target="_blank">ColorPicker</a> -> 네이버의 색상 팔레트 동일함 <br>
+		
+		#<b class="r">00</b><b class="g">11</b><b class="b">22</b> <br>
+		00 : red의 비율 / 11 : green의 비율 / 22 : blue의 비율 <br>
+		
+		<p class="r">#ff0000 : red 원색</p>
+		<p class="g">#00ff00 : green 원색</p>
+		<p class="b">#0000ff : blue 원색</p>
+		<p class="black">#000000 : 검은색</p>
+		<p class="white">#ffffff : 하얀색</p>
+		
+		<!-- #aaccff 같이 각 두개가 세트로 맞아떨어지면,
+		#acf로 줄여서 쓸 수 있다. -->
+		
+		class는 중복해서 사용이 가능해
+		
+		<hr>
+		
+		<div class="div01">
+			이제 <span>span과</span> <span>div</span>에 대해 설명할꺼야
+			<h3>div는 <span class="block">블록</span> 요소로</h3> 여러개를 한번에 묶어서 사용할 수 있어.		
+		</div>
+		
+		<hr>
+		
+		<!-- ex) 04, -------------------------------------------------------- 
+		id : 디자인과, 디자인 외의 모든 형식에서 접근 가능
+		id는 중복이 불가능하다.
+		<style>에서 id 접근은 '#'으로 한다
+		-->
+		
+		이제 id를 이용해 볼꺼야. id는 중복이 안돼 <br>
+		<h1 id="id1">아이디 1</h1>
+		<h1 id="id2">아이디 2</h1>
+		
+		<hr>
+		
+		<!-- ex) 05  ------------------------------------------------------------
+		border(선)
+		
+		border-style : 테두리 스타일 조정
+		none; : 테두리 없음
+		hidden; : 숨겨져 있음
+		dotted; : 둥근 점선
+		dashed; : 네모난 점선
+		solid; : 실선
+		double; : 두겹짜리 선
+		groove; : 두께 있음
+		ridge; : 두께 있음
+		inset; : 두께 덜 있음
+		outset; : 두께 덜 있음
+		
+		border를 사용해 width, color, style를 단축해서 사용 가능
+		만약 div에서 너비가 따로 지정된 경우, 블록 요소는 더 이상 브라우저의 
+		너비에 맞추지 않고 스크롤이 생긴다. 
+		-->
+		
+		<p class="p1">border none</p>
+		<p class="p2">border hidden</p>
+		<p class="p3">border dotted</p>
+		<p class="p4">border dashed</p>
+		<p class="p5">border solid</p>
+		<p class="p6">border double</p>
+		<p class="p7">border groove</p>
+		<p class="p8">border ridge</p>
+		<p class="p9">border inset</p>
+		<p class="p10">border outset</p>
+
+		<div class="di1">
+			div 단축해서 사용
+		</div>
+		
+		<div class="di2">
+			div 각 테두리 스타일 다르게
+		</div>
+		
+		<div class="di3">
+			div 너비 지정하여 브라우저 스크롤 생김
+		</div>
+		
+		<hr>
+		
+		<!-- ex 06)  ---------------------------------------------------------------
+		padding : 안쪽 여백 
+		 -->
+		 
+		<p class="box1">padding 상하좌우</p>
+		<p class="box2">padding 상하, 좌우</p>
+		<p class="box3">padding 상, 좌우, 하</p>
+		<p class="box4">padding 상, 우, 하, 좌</p>
+		<p class="box5">padding 특정 부분만</p>
+		
+		<!-- ex 07)  ---------------------------------------------------------------
+		margin : 바깥쪽 여백
+		 -->
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style>
+			  /* text-overflow : ellipsis -> 화면을 넘어가는 텍스트가 있를경우 "..." 생략기호
+			  nowwrap, hidden이 반드시 함께 추가되어 있어야 한다.*/
+			p:first-child{border: 3px solid black;
+			  white-space: nowrap;
+			  overflow: hidden;
+			  text-overflow: ellipsis;} 
+		
+			/* white-space: nowrap -> 내용이 브라우저의 너비를 벗어나면 스크롤을 생성해주는 형태*/
+			.nowrap{white-space: nowrap;
+					background: yellow;}
+		</style>
+	</head>
+	
+	<body>
+		<p>
+			화면에 출력중인 문자열이 브라우저의 너비보다 넓다면?
+		</p>
+		
+		<p class="nowrap">
+			웹브라우저의 크기를 넘어가는 수준의 내용이 포함되어 있다면?
+		</p>
+		
+	</body>
+</html>

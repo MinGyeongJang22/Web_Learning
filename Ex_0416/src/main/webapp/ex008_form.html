@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	
+	<body>
+		<!-- submit 버튼을 눌렀을 경우 form 태그의 action에 저장되어있는 경로로 이동 
+			form : 특정 파라미터를 원하는 페이지로 전달하기 위한 태그 *매우매우 중요*-->
+			
+		<form action="abc.html">
+			<!-- input : 값을 입력받릉 수 있음 
+			text : 글자 타입
+			value : 입력받고 시작, 다음 페이지로 보내지는 정보
+			password : 암호로 보여짐
+			placeholder : 텍스트가 채워질 경우 사라지는 글자
+			-->
+			ID : <input type="text" size="12" value="안녕" name="myId"> <br>
+			PWD : <input type="password" placeholder="비밀번호를 입력하시오" name="myPwd">
+			<hr>
+			
+			이메일 수신 여부 :
+			<!-- radio
+			name을 동일하게 적어두면 중복 불가능
+			-->
+			<input type="radio" value="y" name="email">예
+			<input type="radio" value="n" name="email">아니오
+		
+			<br>
+		
+			관심분야 : <br>
+			<input type="checkbox" value="HTML" name="chk1">HTML<br>		
+			<input type="checkbox" value="JavaScript" name="chk1">JS<br>		
+		
+			업로드 :
+			<input type="file">
+		
+			<!-- submit : 버튼 
+				 value : 버튼에 표시될 텍스트 -->
+			<input type="submit" value="가입하기">
+		
+		</form>
+	</body>
+</html>

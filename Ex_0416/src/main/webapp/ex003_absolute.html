@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>position:absolute</title>
+		
+		<link rel="stylesheet" href="css/reset.css">
+		
+		<style>
+			.box{margin: 40px;
+				 width: 250px;
+				 border: 1px solid red;
+				 position: relative; 
+				 /* 자식 요소 중 절대 좌표 position: absolute;를 사용했을 경우 
+				 부모 요소가 position: relative;를 사용하여 좌표의 중심이 부모 요소가 되도록 함*/
+				 }
+				 
+				 
+			p{width: 130px;
+			  height: 80px;
+			  padding: 10px;
+			  color: white;}
+			
+			.red{background: red;}
+			
+			/* left, top등의 속성을 사용하면, .box를 부모로 인지하지 못하고
+			기준이 body로 .blue이를 해결하기 위해 부모인, .box에서 positio:relative 속성을 추가하여
+			자식으로 인지하도록 설정해야 한다.*/
+			
+			.blue{background: blue;
+				  position: absolute;
+				  left: 50px; top: 30px;} 
+				  /*left, top 등을 사용하면 절대좌표의 중심은 브라우저가 된다.*/
+			
+			.green{background: green;}
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		<div class="box">
+			<p class="red">박스1</p>
+			<p class="blue">박스2</p>
+			<p class="green">박스3</p>
+		</div>
+	</body>
+</html>

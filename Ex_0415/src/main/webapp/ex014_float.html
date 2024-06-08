@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>float(왼쪽, 오른쪽 정렬)</title>
+		
+		<style>
+			*{margin: 0; padding: 0;}
+			
+			#container{font: 15px, "굴림", sans-serif; /* sans-serif : 대부분의 브라우저에서 지원하는 돋움과 비슷한 폰트 */
+						width: 500px;
+						border: 5px solid #caa;
+						padding: 10px;
+						background: #fdd;
+						margin: 10px auto;
+						/* 자식객체가 float을 사용하고 있다면, 여전히 내 영역 안에 존재해야 하는 경우가 많으므로
+						자식을 정상적으로 인지하기 위해 overflow:hidden을 통해
+						floar을 해제해줘야 한다 */
+						overflow: hidden;}
+						
+			h1{text-align: center;}
+			
+			/* float를 사용한 자식 요소는 부모div에서 자식으로 인지하지 않는다.
+				그렇기 때문에 float를 사용할 경우 자식으로 인지하는 코드를 적어줘야 함
+				>> 즉, 부모 div에서 overflow: hidden; 기입 >> *중요* */
+			
+			/* float은 '부유'의 의미로 부모에게 영향을 받지 않고, 공중에 떠있는 모양이 된다.
+			이 경우, 부모는 자식을 포함하는 영역을 지정하는 것이 불가하므로, 이를 해결하기 위해
+			float을 해제(부모가 자식의 높이를 인지하도록)가 필요 */
+			
+			
+			.green{width: 200px; height: 100px;
+				   background: lemonchiffon;
+				   float: left;} /* float: left >> 부모 내부에서 왼쪽 정렬 */
+				   
+			.coffee{width: 200px; height: 100px;
+					background: lightcoral;
+					float: right;}
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		<div id="container">
+			<h1>float연습중</h1>
+			
+			<div class="green">
+				녹차
+			</div>
+			
+			<div class="coffee">
+				커피
+			</div>
+			
+		</div>
+	</body>
+</html>
