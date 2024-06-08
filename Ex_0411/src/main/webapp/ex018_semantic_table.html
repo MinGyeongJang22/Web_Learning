@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>시멘틱 태그를 이용한 테이블</title>
+	</head>
+	
+	<body>
+		
+		<!-- table
+		코드 상에서는 위에서 아래로 내려오기 때문에, 
+		음성 낭독기에서 구분 이후 총 판매량을 말하도록 하기 위해 순서를 변경해주기도 한다-->
+		
+		<!-- thead, tbody, tfoot 순으로 테이블에 나열된다. >> 시멘틱 태그-->
+		<table border="1">
+			
+			<!-- 시멘틱 태그 : 특정 태그의 의미를 브라우저에서 직접적으로 인지하여
+							목적을 갖고 실행되는 태그-->
+			
+			<caption>태블릿PC와 스마트폰</caption>
+			
+			<thead>
+			<tr>
+				<th>구분</th>
+				<th>태블릿</th>
+				<th>스마트폰</th>
+			</tr>
+			</thead>
+
+			<tfoot>
+			<tr>
+				<th>총 판매량</th>
+				<td>5만대</td>
+				<td>16만대</td>
+			</tr>
+			</tfoot>
+
+			<tbody>
+			<tr>
+				<th>상반기 판매량</th>
+				<td>2만대</td>
+				<td>5만대</td>
+			</tr>
+			
+			<tr>
+				<th>하반기 판매량</th>
+				<td>3만대</td>
+				<td>11만대</td>
+			</tr>
+			</tbody>
+	
+		</table>
+	</body>
+</html>
